@@ -609,7 +609,6 @@ nav sup {
     display: flex;
     align-items: center;
     font-size: 40px;
-
     color: #cbbaa900;
     -webkit-background-clip: text;
     background: linear-gradient(45deg, #fff 23%, var(--color-pri) 10%);
@@ -857,6 +856,7 @@ nav sup {
     background-color: #ffffff1f;
     text-align: justify;
     margin-top: 12px;
+    transition: 0.5s;
     font-family: var(--font-sec);
     border: 1px solid var(--color-pri);
     color: #fff;
@@ -869,7 +869,8 @@ nav sup {
 
 .my-tab.tab-show{
     display: block;
-    
+    animation: slide-up 0.6s ease-in 0s forwards;
+   -webkit-animation: slide-up 0.6s ease-in 0s  forwards;
 }
 
 .my-tab-btn{
@@ -899,3 +900,13 @@ nav sup {
     content: '\f111';
 }
 
+@keyframes slide-up {
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+}
