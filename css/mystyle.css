@@ -910,3 +910,63 @@ nav sup {
             opacity: 1;
         }
 }
+
+.aboutme-container > .row{
+ align-items: center;
+ height: 100%;
+}
+
+.tab-col{
+    align-self: baseline;
+}
+
+.img-effect-children{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.img-effect-children > .img{
+    height: 200px;
+    width: 200px;
+    transition: 0.5s;
+    position: relative;
+
+}
+.img-effect-children > .img img{
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0.5;
+    filter: blur(2px);
+    transform: translate(-50%,-50%);
+}
+
+
+.img-effect-children > .img.active img{
+    filter: blur(0px);
+    opacity: 1;
+    top: 20px;
+    border-radius: 20%;
+    transition: var(--base-transition);
+}
+
+
+.img-effect-children .img.active::after{
+    content: '';
+    background: radial-gradient(#f2e9e9, #4e4e4e);
+    filter: blur(6.2px);
+    /* display: block; */
+    left: 50%;
+    position: absolute;
+    width: 81%;
+    height: 36px;
+    bottom: 0;
+    border-radius: 69%;
+    transform: translateX(-50%);
+}
+
+.img-effect-children .img.active:hover img{
+    transform: translate(-50%,-50%) scale(1.2) rotateY(360deg);
+}
