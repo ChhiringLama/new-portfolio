@@ -1,0 +1,72 @@
+<div class="my-tab-container">
+    <div class="my-tab-header">
+        <button class="my-btn my-tab-btn active-tab-btn" id="tab-btn-1">Tab 1</button>
+        <button class="my-btn my-tab-btn " id="tab-btn-2">Hobby</button>
+        <button class="my-btn my-tab-btn" id="tab-btn-3">Learning</button>
+    </div>
+    <div class="my-tab-content">
+        <div class="my-tab tab-show" id="tab-1">
+            <h4>Tab 1 Content</h4>
+        </div>
+        <div class="my-tab" id="tab-2">
+           <h4>Tab 2 Content</h4>
+        </div>
+    </div>
+</div>
+
+//css
+.my-tab{
+    display: none;
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: justify;
+}
+
+.my-btn.active-tab-btn{
+    color: #fff;
+}
+
+.my-tab.tab-show{
+    display: block;
+    
+}
+
+.my-tab-btn{
+    border: none;
+    padding: 14px 20px;
+    background-color: #c0c0c0;
+}
+
+and js
+//My tab functionality 
+
+var tabButtons=document.querySelectorAll('.my-tab-btn');
+
+tabButtons.forEach(button => {
+
+  button.addEventListener('click',()=>{
+      removeTabshow();
+      //example tab-btn-1
+      var elementsId=button.id;
+
+      var key=elementsId.slice(8, elementsId.length);
+      button.classList.add('active-tab-btn');
+
+      console.log(key);
+      // var changeTab=document.querySelector('#')
+      
+      var selectedTab=document.querySelector(`#tab-${key}`);
+      selectedTab.classList.add('tab-show');
+    })
+
+});
+
+function removeTabshow(){
+    var allTabs=document.querySelectorAll('.my-tab');
+    allTabs.forEach(tabs=>{
+      tabs.classList.remove('tab-show');
+    });
+    tabButtons.forEach((button)=>{
+    button.classList.remove('active-tab-btn');
+  });
+}
