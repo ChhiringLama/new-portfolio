@@ -931,8 +931,66 @@ nav sup {
     width: 200px;
     transition: 0.5s;
     position: relative;
-
 }
+
+.img-effect-children> .img::after{
+    content: '';
+    background: radial-gradient(#ffffff, #828282);
+    filter: blur(6.2px);
+    /* display: block; */
+    left: 50%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 69%;
+    animation: light-fade 1s ease-in 0s forwards ;
+}
+
+@keyframes light-fade {
+    0%{
+        width: 61%;
+        height: 38px;
+        
+    }
+    10%{
+        width:57%;
+        height: 34px;
+        
+    }
+    14%{
+        width: 18%;
+        height: 24px;
+        opacity: 0.3;
+        
+    }
+    18%{
+        opacity: 0;
+    }
+    20%{
+        width: 31%;
+        height: 20px;
+        opacity: 0.9;
+    }
+    25%{
+        opacity: 0;
+    }
+    30%{
+        width: 18%;
+        height: 24px;
+        opacity: 0.3;
+    }
+    40%{
+        width: 31%;
+        height: 20px;
+        opacity: 0.9;
+    }
+    100%{
+        width: 21%;
+        height: 30px;
+        opacity: 0;
+    }
+    
+}
+
 .img-effect-children > .img img{
     height: 100%;
     position: absolute;
@@ -955,16 +1013,59 @@ nav sup {
 
 .img-effect-children .img.active::after{
     content: '';
-    background: radial-gradient(#f2e9e9, #4e4e4e);
+    background: radial-gradient(#ffffff, #828282);
     filter: blur(6.2px);
     /* display: block; */
     left: 50%;
     position: absolute;
-    width: 81%;
-    height: 36px;
     bottom: 0;
     border-radius: 69%;
     transform: translateX(-50%);
+    animation: light-glow 0.2s ease-in forwards;
+    -webkit-animation:light-glow 1s ease-in forwards;
+}
+
+@keyframes light-glow {
+    0%{
+        width: 21%;
+        height: 30px;
+        opacity: 0;
+    }
+    10%{
+        width: 31%;
+        height: 20px;
+        opacity: 0.9;
+    }
+    14%{
+        width: 18%;
+        height: 24px;
+        opacity: 0.3;
+    }
+    18%{
+        opacity: 0;
+    }
+    20%{
+        width: 31%;
+        height: 20px;
+        opacity: 0.9;
+    }
+    25%{
+        opacity: 0;
+    }
+    30%{
+        width: 18%;
+        height: 24px;
+        opacity: 0.3;
+    }
+    40%{
+        width:57%;
+        height: 34px;
+    }
+    100%{
+        width: 61%;
+        height: 38px;
+    }
+    
 }
 
 .img-effect-children .img.active:hover img{

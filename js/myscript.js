@@ -49,11 +49,14 @@ function changePara(greets) {
 //My tab functionality 
 
 var tabButtons=document.querySelectorAll('.my-tab-btn');
+var tabImgCOllection=document.querySelector('.img-effect-children');
+var tabImgCOllection=tabImgCOllection.querySelectorAll('.img');
 
 tabButtons.forEach(button => {
 
   button.addEventListener('click',()=>{
       removeTabshow();
+      removeImgShow();
       //example tab-btn-1
       var elementsId=button.id;
 
@@ -64,10 +67,16 @@ tabButtons.forEach(button => {
       // var changeTab=document.querySelector('#')
       
       var selectedTab=document.querySelector(`#tab-${key}`);
+      var selectedImg=document.querySelector(`#tab-img-${key}`);
+      
       selectedTab.classList.add('tab-show');
+      selectedImg.classList.add('active');
     })
 
 });
+
+
+
 
 function removeTabshow(){
     var allTabs=document.querySelectorAll('.my-tab');
@@ -78,3 +87,11 @@ function removeTabshow(){
     button.classList.remove('active-tab-btn');
   });
 }
+
+function removeImgShow(){
+  tabImgCOllection.forEach(img=>{
+    img.classList.remove('active');
+  })
+}
+
+
