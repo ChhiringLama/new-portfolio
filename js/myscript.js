@@ -52,6 +52,12 @@ var tabButtons=document.querySelectorAll('.my-tab-btn');
 var tabImgCOllection=document.querySelector('.img-effect-children');
 var tabImgCOllection=tabImgCOllection.querySelectorAll('.img');
 
+function removeImgShow(){
+  tabImgCOllection.forEach(img=>{
+    img.classList.remove('active');
+  })
+}
+
 tabButtons.forEach(button => {
 
   button.addEventListener('click',()=>{
@@ -76,8 +82,6 @@ tabButtons.forEach(button => {
 });
 
 
-
-
 function removeTabshow(){
     var allTabs=document.querySelectorAll('.my-tab');
     allTabs.forEach(tabs=>{
@@ -88,10 +92,6 @@ function removeTabshow(){
   });
 }
 
-function removeImgShow(){
-  tabImgCOllection.forEach(img=>{
-    img.classList.remove('active');
-  })
-}
+
 
 
