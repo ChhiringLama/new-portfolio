@@ -13,6 +13,20 @@ a {
     color: white;
 }
 
+::before, ::after {
+    box-sizing: border-box;
+}
+
+.form-control{
+    border-color: #828282;
+}
+
+.form-control:focus{
+   
+    box-shadow: none;
+    border-color: var(--color-pri);
+}
+
 ul {
     padding-left: 0px;
 }
@@ -563,7 +577,7 @@ nav sup {
         transform: rotate(180deg);
     }
 
-    30% {
+    25% {
 
         transform: rotate(0deg);
     }
@@ -597,7 +611,7 @@ nav sup {
 .skills-icons {
     display: flex;
     justify-content: space-between;
-    width: 200px;
+    width: 260px;
     margin-top: 14px;
 }
 
@@ -944,7 +958,7 @@ nav sup {
     position: absolute;
     bottom: -40px;
     border-radius: 69%;
-    animation: light-fade 1s ease-in 0s forwards ;
+    animation: light-fade 0.4s ease-in 0s forwards ;
 }
 
 @keyframes light-fade {
@@ -1045,4 +1059,76 @@ nav sup {
 
 .img-effect-children .img.active:hover img{
     transform: translate(-50%,-50%) scale(1.2) rotateY(360deg);
+}
+
+.footer{
+    font-family: var(--font-pri);
+    background: linear-gradient(to bottom, var(--color-pri) 50%, var(--color-sec) 50%);
+}
+
+.footer h2{
+    color:var(--color-pri) ;
+}
+
+.footer a{
+    color: var(--color-pri);
+    transition: var(--base-transition);
+}
+
+.footer a:hover{
+    color: rgb(159, 107, 11);
+}
+
+.footer .master-container>.row > *{
+    align-self: center;
+}
+
+.footer .master-container> .row{
+    background: white;
+    padding: 28px;
+    border-radius: 20px;
+}
+
+.footer form textarea{
+    text-align: left;
+    border-color: #828282;
+    padding: 10px;
+    border:1px solid inherit;
+    border-radius: 4px;
+}
+
+textarea{
+    border-color: var(--color-pri);
+    outline: 0;
+}
+
+.footer form :is(.top-items){
+    display: flex;
+    gap: 20px;
+}
+
+form .top-items input{
+    padding: 9px;
+}
+
+input[type="submit"]{
+    border: 1px solid transparent;
+    background-color: var(--color-pri);
+    border-radius: 4px;
+    transition: var(--base-transition);
+    padding: 9px 28px;
+}
+
+input[type="submit"]:hover{
+    box-sizing: border-box;
+    border: 1px solid var(--color-pri);
+    background-color: white;
+    color: var(--color-pri);
+}
+
+input[type="submit"]::after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background:black;
 }
