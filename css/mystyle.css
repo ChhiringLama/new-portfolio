@@ -1067,7 +1067,11 @@ nav sup {
 }
 
 .footer h2{
-    color:var(--color-pri) ;
+    font-size: 40px;
+    color: #cbbaa900;
+    -webkit-background-clip: text;
+    background: linear-gradient(45deg, #000 23%, var(--color-pri) 10%);
+    background-clip: text;
 }
 
 .footer a{
