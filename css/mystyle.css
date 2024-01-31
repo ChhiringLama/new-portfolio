@@ -946,8 +946,18 @@ nav sup {
     transform: translateY(20px);
     transition: 0.5s;
     position: relative;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
 }
 
+@keyframes hovering {
+    0% {
+        transform: translate(-50%, -50px);
+    }
+    100% {
+        transform: translate(-50%, -20px);
+    }
+}
 .img-effect-children> .img::after{
     content: '';
     background: radial-gradient(#ffffff, #828282);
@@ -958,7 +968,8 @@ nav sup {
     position: absolute;
     bottom: -40px;
     border-radius: 69%;
-    animation: light-fade 0.4s ease-in 0s forwards ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: light-fade 0.4s ease-in 0s forwards;
 }
 
 @keyframes light-fade {
@@ -997,6 +1008,9 @@ nav sup {
     top: 20px;
     border-radius: 20%;
     transition: var(--base-transition);
+    animation:  hovering 4s infinite ease-in 0s alternate ;
+    -webkit-animation:  hovering 4s infinite ease-in 0s  alternate;
+
 }
 
 
@@ -1057,9 +1071,7 @@ nav sup {
     
 }
 
-.img-effect-children .img.active:hover img{
-    transform: translate(-50%,-50%) scale(1.2) rotateY(360deg);
-}
+
 
 .footer{
     font-family: var(--font-pri);
@@ -1130,9 +1142,45 @@ input[type="submit"]:hover{
     color: var(--color-pri);
 }
 
-input[type="submit"]::after{
-    content: '';
-    width: 10px;
-    height: 10px;
-    background:black;
+.submit-item input[type="submit"]{
+    position: relative;
+    z-index: 1;
+}
+
+.submit-item::after{
+    content: '\00a0';
+    width: 16%;
+    display: block;
+    /* background: black; */
+    height: 2px;
+    transition: 5s;
+    top: 50%;
+    border-top: 3px dashed #ff8d00;
+    position: absolute;
+}
+
+.submit-item:hover::after{
+    width: 100%;
+}
+
+
+.footer input:not(input[type="submit"])::placeholder{
+    color: rgb(164, 164, 164);
+}
+
+.footer input:not(input[type="submit"]), .footer textarea{
+    background-color: rgb(237 237 237);
+    border: none;
+    border-radius: 2px;
+    
+}
+
+.social-footer ul li{
+    display: inline-flex;
+    padding-right: 10px;
+}
+
+.social-footer ul li i{
+    color: #2e2e2e;
+    font-size: 20px;
 }
