@@ -1113,6 +1113,24 @@ nav sup {
     border-radius: 4px;
 }
 
+.social-footer{
+    align-items: center;
+}
+
+.form-paragraphs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-paragraphs h4:last-child{
+    font-size: 30px;
+    width: 50%;
+    border-top: 2px solid black;
+    text-align: right;
+    margin-left: auto;
+}
+
 textarea{
     border-color: var(--color-pri);
     outline: 0;
@@ -1153,14 +1171,14 @@ input[type="submit"]:hover{
     display: block;
     /* background: black; */
     height: 2px;
-    transition: 5s;
+    transition: 2s;
     top: 50%;
     border-top: 3px dashed #ff8d00;
     position: absolute;
 }
 
 .submit-item:hover::after{
-    width: 100%;
+    width: 40%;
 }
 
 
@@ -1184,3 +1202,7 @@ input[type="submit"]:hover{
     color: #2e2e2e;
     font-size: 20px;
 }
+
+
+
+/* Responsive for tablet view */
